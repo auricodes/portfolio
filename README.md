@@ -1,4 +1,4 @@
-**# Task Manager – MERN Stack Application**
+## Task Manager – MERN Stack Application
 
 ## Overview
 
@@ -27,12 +27,13 @@ This project represents the first application in a four-project portfolio focuse
 
 ## Architecture
 The project is structured in two main folders:
-
-taskmanager/
+```
+task-manager/
  ├── server/
  └── client/
-
+```
 Backend Structure
+```
 server/
  ├── models/
  │    ├── user.js
@@ -43,8 +44,10 @@ server/
  ├── middleware/
  │    └── authMiddleware.js
  ├── server.js
- └── .env
-The backend is designed following REST principles and includes authentication middleware to protect private routes.
+```
+The backend is designed following REST principles and includes authentication middleware to protect private routes. 
+Environment variables are managed through a local `.env` file (not included in the repository).
+
 
 
 ## Backend Features
