@@ -1,6 +1,6 @@
-Task Manager – MERN Stack Application
+**# Task Manager – MERN Stack Application**
 
-Overview
+## Overview
 
 Task Manager is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, Node.js).
 The main focus of this project is the backend architecture, including authentication with JWT, password hashing, protected routes, and user-based task management.
@@ -8,7 +8,7 @@ The main focus of this project is the backend architecture, including authentica
 This project represents the first application in a four-project portfolio focused on backend development and secure API design.
 
 
-*Tech Stack*
+## Tech Stack
 - Backend:
     - Node.js
     - Express.js
@@ -25,7 +25,7 @@ This project represents the first application in a four-project portfolio focuse
     - CSS
 
 
-*Architecture*
+## Architecture
 The project is structured in two main folders:
 
 taskmanager/
@@ -47,7 +47,7 @@ server/
 The backend is designed following REST principles and includes authentication middleware to protect private routes.
 
 
-*Backend Features*
+## Backend Features
 - User Authentication
     - User registration with hashed passwords (bcrypt)
     - Login with credential validation
@@ -72,8 +72,7 @@ Implemented operations:
     - Delete task
 Tasks are stored with timestamps using Mongoose schema options.
 
-*API Endpoints*
-
+## API Endpoints
 Authentication:
 
     POST /api/auth/register
@@ -87,7 +86,7 @@ Authentication:
     DELETE /api/tasks/:id
 
 
-*Security Implementation*
+## Security Implementation
 - Password hashing with bcrypt
 - JWT-based authentication
 - Middleware-based route protection
@@ -95,7 +94,7 @@ Authentication:
 - User ownership validation for tasks
 
 
-*Frontend Features*
+## Frontend Features
 - User registration page
 - Login page
 - Dashboard with task list
@@ -106,7 +105,7 @@ Authentication:
 The frontend communicates with the backend using Axios and sends the JWT in the Authorization header.
 
 
-*Database Design*
+## Database Design
 - User Schema
     - username (unique)
     - email (unique)
@@ -120,7 +119,7 @@ The frontend communicates with the backend using Axios and sends the JWT in the 
     - timestamps
 
 
-*How to Run the Project*
+## How to Run the Project
 
 - Backend
     cd server
@@ -146,7 +145,7 @@ Frontend runs on:
 http://localhost:5173
 
 
-*Learning Focus*
+## Learning Focus
 
 This project emphasizes:
 - Building a secure REST API
@@ -157,16 +156,26 @@ This project emphasizes:
 
 The backend implementation is the core strength of this project and demonstrates understanding of authentication, authorization, and database modeling.
 
-*Future Improvements*
 
-- Logout functionality with token invalidation
-- Task filtering (completed / pending)
-- Responsive UI improvements
-- Deployment (Render / Railway / Vercel)
-- Role-based authorization
+## Challenges Faced & Solutions
+
+During the development of this project several technical issues were encountered and resolved, contributing to a deeper understanding of full-stack application architecture.
+
+- Authentication debugging  
+  Login failures were caused by mismatched field names between frontend and backend. The issue was resolved by aligning request payloads and schema fields.
+
+- Middleware and protected routes  
+  Initial errors in accessing protected endpoints were fixed by correctly importing authentication middleware and ensuring the JWT token was sent in request headers.
+
+- Environment configuration  
+  MongoDB connection and environment variable setup required adjustments to properly load `.env` variables and start the database service.
+
+- Frontend dependency and routing issues  
+  Missing packages and incorrect imports were identified and resolved, stabilizing the client-side routing and API communication.
 
 
-*Author*
+
+## Author
 
 Aurora Pantaleo
 Full-stack development portfolio project – 2026
