@@ -181,4 +181,4 @@ During the development of this project several technical issues were encountered
 ## Author
 
 Aurora Pantaleo
-Full-stack development portfolio project – 2026
+Junior Full-stack development portfolio project – 2026
