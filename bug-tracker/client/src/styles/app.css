@@ -1,0 +1,227 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: #f4f6f9;
+  color: #111827;
+}
+
+/* ---------- shared ---------- */
+.card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ---------- inputs/buttons ---------- */
+.input, .select, .textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfd4dc;
+  border-radius: 0px; /* squadrati */
+  outline: none;
+  background: white;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover { opacity: 0.95; }
+
+.btn-secondary { background: #111827; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.muted { margin-top: 12px; opacity: 0.8; }
+
+/* ---------- Auth ---------- */
+.auth-card { width: 360px; padding: 28px; }
+
+/* ---------- Issues page ---------- */
+.issues-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* BOX: qui gestiamo lo "spazio alto" comune per tutto */
+.issues-box {
+  position: relative;
+  width: min(1100px, 100%);
+  padding: 18px;
+  padding-top: 72px; /* spazio per logout + respiro, uguale per sinistra/destra */
+}
+
+/* Logout assoluto: non spinge giù niente */
+.topbar {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+/* GRID: nessun margin/padding-top, parte subito sotto al padding-top della box */
+.issues-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+/* padding uniforme per le 2 colonne */
+.sidebar,
+.content {
+  padding: 14px;
+  margin: 0;
+}
+
+/* Titolo senza margini strani */
+.sidebar h2 {
+  margin: 0 0 10px 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.issue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.issue-item {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+}
+
+.issue-main { min-width: 0; }
+
+.issue-title {
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+
+.issue-title:hover { text-decoration: underline; }
+
+.meta {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  align-items: start;
+}
+
+/* closed issues look dimmed */
+.issue-item.is-closed {
+  opacity: 0.55;
+}
+
+/* priority dots */
+.prio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.dot-low { background: #16a34a; }
+.dot-medium { background: #f5ce0b; }
+.dot-high { background: #f97316; }
+.dot-critical { background: #dc2626; }
+
+/* outline buttons */
+.btn-outline-primary {
+  background: white;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  border-radius: 10px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.btn-outline-primary:hover { background: rgba(37,99,235,0.06); }
+
+.btn-outline-danger {
+  background: white;
+  border: 2px solid #991b1b;
+  color: #991b1b;
+  border-radius: 10px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.btn-outline-danger:hover { background: rgba(153,27,27,0.06); }
+
+/* ---------- New Issue ---------- */
+.newissue-card {
+  width: min(720px, 100%);
+  padding: 22px;
+}
+
+.backlink {
+  text-decoration: none;
+  font-weight: 600;
+}
