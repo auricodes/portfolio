@@ -57,16 +57,18 @@ router.patch("/:id", authMiddleware, async (req, res) => {
 });
 
 //AGGIORNARE LO STATO
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleware, async (req, res) => {
   try {
-    const updatedTask = await Task.findByIdAndUpdate(
-      req.params.id,
+    const updatedTask = await Task.findOneAndUpdate(
+      { _id: req.params.id, user: req.user },
       { completed: req.body.completed },
       { new: true }
     );
+    if (!updatedTask) return res.status(404).json({ message: "Task not found" });
     res.json(updatedTask);
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
