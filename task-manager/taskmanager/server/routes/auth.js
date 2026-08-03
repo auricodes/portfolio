@@ -23,7 +23,8 @@ router.post("/register", async (req, res) => {
     res.status(201).json({ message: "Utente registrato!" });
 
   } catch (error) {
-    res.status(500).json(error);
+    console.error(error);
+    res.status(500).json({ message: "Errore interno del server" });
   }
 });
 
@@ -51,7 +52,8 @@ router.post("/login", async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).json(err);
+    console.error(err);
+    res.status(500).json({ message: "Errore interno del server" });
   }
 });
 
